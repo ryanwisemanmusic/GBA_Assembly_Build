@@ -1,12 +1,14 @@
 SUMMARY:
-	ROM0: 110 bytes used / 16274 free
+	ROM0: 130 bytes used / 16254 free
 
 ROM0 bank #0:
 	SECTION: $0000-$001c ($001d bytes) ["Build Date"]
 	         $0000 = BuildDate
 	EMPTY: $001d-$00ff ($00e3 bytes)
 	SECTION: $0100-$014f ($0050 bytes) ["Header"]
-	SECTION: $0150-$0150 ($0001 byte) ["Entry Point"]
+	SECTION: $0150-$0164 ($0015 bytes) ["Entry Point"]
 	         $0150 = EntryPoint
-	EMPTY: $0151-$3fff ($3eaf bytes)
-	TOTAL EMPTY: $3f92 bytes
+	         $015a = EntryPoint.loop
+	         $015e = WaitVBlank
+	EMPTY: $0165-$3fff ($3e9b bytes)
+	TOTAL EMPTY: $3f7e bytes
