@@ -15,16 +15,17 @@ EntryPoint:
     ;We then call our first loop
     call WaitVBlank
 
-    ld a, [$ff00+c]
-    ldh [$ff00], a
-
-.loop:
+;This is the frameLoop that enables the game to run
+.gameLoop:
     halt
     nop 
-    jr .loop
+    jr .gameLoop
 
 WaitVBlank:
+    ;This loads the current scanline into a
     ldh a, [rLY]
+    ;This compares against the amount of scanlines the Game Boy has: 144
     cp 144
+    ;This jumps if the carry flag is set
     jr c, WaitVBlank
     ret
